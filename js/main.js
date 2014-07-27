@@ -16,14 +16,14 @@ $(document).ready(function() {
           var responseHtml = data.responseText;
 
           var index = $("#index").val();
-          console.log($("#index").val());
+          console.log("$index", index);
 
           // DOMに変換
           var doc = new DOMParser().parseFromString(data.responseText, 'application/xhtml+xml');
           // スタイリストの画像URLを取得
           var elm = doc.getElementById("showcase").getElementsByClassName("showcase-slide")[0];
-          var stylistImage =　elm.getElementsByClassName("showcase-content")[0].getElementsByTagName("img")[0].getAttribute("src");
-          console.log(stylistImage);
+          var stylistImage = elm.getElementsByClassName("showcase-content")[0].getElementsByTagName("img")[0].getAttribute("src");
+          console.log("stylistImage", stylistImage);
 
           // 画像のリンクをつけて表示
           $('#stylist-image').attr('href', stylistImage);
@@ -34,7 +34,7 @@ $(document).ready(function() {
           // スタイリストの作品画像URLを取得
           var work_tmp = doc.getElementById("staff-work-featured").getElementsByClassName("trans")[0];
           workImage = work_tmp.getElementsByTagName("img")[0].getAttribute("src");
-          console.log(workImage);
+          console.log("workImage", workImage);
 
           // 画像のリンクをつけて表示
           $('#work-image').attr('href', workImage);
