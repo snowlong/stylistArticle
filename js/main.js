@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $("button:button.btn").click(function() {
       //画像ダウンロード
-      $('#stylist-image').attr('href', 'http://www.syuhari.jp/');
+      // $('#stylist-image').attr('href', 'http://www.syuhari.jp/');
 
 
       // 処理
@@ -15,6 +15,9 @@ $(document).ready(function() {
 
           var responseHtml = data.responseText;
 
+          var index = $("#index").val();
+          console.log($("#index").val());
+
           // DOMに変換
           var doc = new DOMParser().parseFromString(data.responseText, 'application/xhtml+xml');
           // スタイリストの画像URLを取得
@@ -24,14 +27,18 @@ $(document).ready(function() {
 
           // 画像のリンクをつけて表示
           $('#stylist-image').attr('href', stylistImage);
+          $('#stylist-image').attr('download', index);
+          // var index_val = $('#stylist-image').attr('download');
+          $('#thumb-stylist').attr('src', stylistImage);
 
           // スタイリストの作品画像URLを取得
           var work_tmp = doc.getElementById("staff-work-featured").getElementsByClassName("trans")[0];
-          workImage = work_tmp.getElementsByTagName("img")[0].getAttribute("src")
+          workImage = work_tmp.getElementsByTagName("img")[0].getAttribute("src");
           console.log(workImage);
 
           // 画像のリンクをつけて表示
           $('#work-image').attr('href', workImage);
+          $('#thumb-work').attr('src', workImage);
           $('#img-link').show();
           
           // サロン名
@@ -64,7 +71,7 @@ $(document).ready(function() {
           var tag = "＃‎beauvo‬ ‪#‎スタイリスト名鑑‬";
 
           var stylistArticle = 
-            "《beauvo厳選 スタイリスト紹介 vol.XX》\n" +
+            "《beauvo厳選 スタイリスト紹介 vol." + index +"》\n" +
             "\n" +
             salonName[2] + " " + stylistName[2] + "さん\n" + 
             "▼" + stylistLastName[0] + "さんのスタイル作品はこちら☆\n" +

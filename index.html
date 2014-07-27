@@ -14,7 +14,7 @@
 <![endif]-->
  
 <!--[if lt IE8]>
-<![endif]-->
+<![endif]--> 
 </head>
  
 <body>
@@ -24,10 +24,18 @@
     </div>
     <form class="form-horizontal">
       <div class="form-group">
-        <label class="panel panel-primary col-sm-3 text-center" for="inputDefault">スタイリストURL</label>
+        <label class="panel panel-primary col-sm-3 text-center" for="index">index</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" id="index" value="" type="number" min="1">
+          <p style="color: #cf1212">vol.XX のXXに当たる数値  </p>
+        </div> 
+      </div>
+      <div class="form-group">
+        <label class="panel panel-primary col-sm-3 text-center" for="inputURL">スタイリストURL</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" id="inputURL" value="">
-          <p>例) http://beauvo.net/salon/163787/staff/388</p>
+          <!-- <p>例) http://beauvo.net/salon/163787/staff/388</p> -->
+          <p>例) http://beauvo.net/salon/163787/staff/413</p>
         </div>
       </div>
       <div class="form-group">
@@ -43,15 +51,14 @@
     </form>
     <div class="col-sm-10">
       <textarea class="form-control" rows="10" id="stylistInfo"></textarea>
-      <p style="color: #cf1212">《beauvo厳選 スタイリスト紹介 vol.XX》の XX は数字に置き換えてください。
     </div>
 
     <div class="clearfix"></div>
 
     <div class="col-sm-10" id="img-link">
       <p style="color: #0971B2">画像リンクʕ•̫͡•ʕ*̫͡*ʕ•͓͡•ʔ-̫͡-ʕ•̫͡•ʔ*̫͡*ʔ-̫͡-ʔ→
-      <a id="stylist-image" href="#">スタイリスト画像</a>
-      <a id="work-image" href="#">作品画像</a>
+      <a id="stylist-image" href="#" download="#"><image id="thumb-stylist" src="#"></a>
+      <a id="work-image" href="#"> <image id="thumb-work" src="#"></a>     
     </div>
   </div>
 <script src="./js/jquery-2.1.1.js"></script>
